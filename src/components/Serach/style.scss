@@ -1,0 +1,17 @@
+.serach {
+  .input-serach {
+    max-width: 250px;
+    width: 75%;
+    margin: 0 auto;
+    padding: 7px 20px;
+    font-size: 18px;
+    outline: none;
+    border-radius: 18px;
+    border: 1px solid #363636;
+    background-color: #929292;
+    color: black;
+  }
+  .input-serach::placeholder {
+    color: black;
+  }
+}
