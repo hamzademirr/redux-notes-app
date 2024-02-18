@@ -1,13 +1,12 @@
-import { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from "react-redux";
-import { addNotes, selectNotes } from '../../redux/notesSlice';
+import { useState } from 'react'
+import { useDispatch } from "react-redux";
+import { addNotes } from '../../redux/notesSlice';
 import './style.scss'
 function NotesInput() {
   const dispatch = useDispatch();
-  const notes = useSelector(selectNotes);
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
-  const [color, setColor] = useState('');
+  const [color, setColor] = useState('red');
 
   const handleClick = () => {
     dispatch(addNotes({

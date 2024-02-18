@@ -3,14 +3,14 @@ import { createSlice, nanoid } from "@reduxjs/toolkit";
 export const notesSlice = createSlice({
   name: 'notes',
   initialState: {
-    notes: [],
+    notes: localStorage.getItem('notes') ? JSON.parse(localStorage.getItem('notes')) : [],
     serachTerm: '',
   },
   reducers: {
     addNotes: {
       reducer(state, action) {
         state.notes.push(action.payload);
-        console.log(state.notes);
+        localStorage.setItem('notes', JSON.stringify(state.notes));
       },
       prepare: ({ title, content, color }) => {
         return {
