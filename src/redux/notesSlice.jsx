@@ -27,6 +27,7 @@ export const notesSlice = createSlice({
       const id = action.payload;
       const filtered = state.notes.filter((item) => item.id !== id);
       state.notes = filtered;
+      localStorage.setItem('notes', JSON.stringify(state.notes));
     },
     serachTerm: (state, action) => {
       state.serachTerm = action.payload;
